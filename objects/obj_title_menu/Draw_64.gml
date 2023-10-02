@@ -1,8 +1,6 @@
-/// @description Insert description here
+/// @desc menu draw
 //setting the menu font
 draw_set_font(fnt_menu);
-
-var aux;
 
 //getting mouse position
 var m_x = device_mouse_x_to_gui(0);
@@ -34,11 +32,19 @@ for (var i = 0; i < op_length; i++)
 	var string_w = string_width(option[menu_level, i]);
 	var string_h = string_height(option[menu_level, i]);
 	var y2 =  y+op_border + op_space*i;
+	//create rectangle on the string for the mouse check
 	if (point_in_rectangle(m_x, m_y, string_w,  y2 - (string_h/2), x+op_border + string_w, y2 + string_h )) 
 	{
-		_c = c_yellow
-		draw_set_color(_c)
-		pos = i;
+		if (menu_level == 2 && pos == 0)
+		{
+			_c = c_white;
+			draw_set_color(_c)
+			pos = i;
+		}else{
+			_c = c_yellow
+			draw_set_color(_c)
+			pos = i;
+		}
 	}else
 	{
 		var _c = c_white;
@@ -46,10 +52,16 @@ for (var i = 0; i < op_length; i++)
 	}
 	
 	if pos == i {_c = c_yellow};
+	if menu_level == 2 && pos == 0 
+	{
+		_c = c_white;
+		pos = 1;
+	}
 	draw_text_color(x+op_border, y2, option[menu_level, i], _c, _c, _c, _c, 1);
 }
 	if (menu_level == 1 && pos == 0)
 		{
+			//currnet volume text
 			draw_text_color(x+op_border + 220, y2/1.4, global.currentVolume, _c, _c, _c, _c, 1)
 		}
 

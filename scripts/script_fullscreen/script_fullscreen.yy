@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "Script2",
+  "name": "script_fullscreen",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

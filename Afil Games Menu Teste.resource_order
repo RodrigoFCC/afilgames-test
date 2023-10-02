@@ -17,16 +17,11 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"obj_slider","order":5,"path":"objects/obj_slider/obj_slider.yy",},
-    {"name":"spr_slider_button","order":5,"path":"sprites/spr_slider_button/spr_slider_button.yy",},
-    {"name":"obj_menu_config","order":1,"path":"objects/obj_menu_config/obj_menu_config.yy",},
     {"name":"spr_menu","order":3,"path":"sprites/spr_menu/spr_menu.yy",},
-    {"name":"Script2","order":1,"path":"scripts/Script2/Script2.yy",},
+    {"name":"script_fullscreen","order":1,"path":"scripts/script_fullscreen/script_fullscreen.yy",},
     {"name":"obj_music","order":2,"path":"objects/obj_music/obj_music.yy",},
-    {"name":"spr_slider","order":4,"path":"sprites/spr_slider/spr_slider.yy",},
     {"name":"music","order":1,"path":"sounds/music/music.yy",},
     {"name":"rm_gameplay","order":1,"path":"rooms/rm_gameplay/rm_gameplay.yy",},
     {"name":"obj_title_menu","order":3,"path":"objects/obj_title_menu/obj_title_menu.yy",},
-    {"name":"obj_settings","order":4,"path":"objects/obj_settings/obj_settings.yy",},
   ],
 }

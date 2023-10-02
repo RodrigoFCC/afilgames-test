@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @desc menu logic
 //get inputs 
 up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
@@ -9,8 +9,6 @@ confirm_key = keyboard_check_pressed(vk_space);
 //store number of options in current menu
 
 op_length = array_length(option[menu_level]);
-
-can_change = false;
 
 // move through the menu
 pos += down_key - up_key;
@@ -28,13 +26,17 @@ if accept_key || mouse_left_pressed{
 			case 0:
 				switch(pos) {
 					//start game
-					case 0:	room_goto(rm_gameplay); break;
+					case 0:
+						room_goto(rm_gameplay); 
+						break;
 					//settings
 					case 1: 
 						menu_level = 1; 
 						break;
 					//quit game
-					case 2: game_end(); break;
+					case 2: 
+						menu_level = 2; 
+						break;
 					}
 				break;
 			
@@ -43,13 +45,12 @@ if accept_key || mouse_left_pressed{
 				switch(pos) {
 					//volume settings
 					case 0:
-					
-						//instance_activate_object(obj_music);
+	
 						break;	
 	
 					//full screen settings
 					case 1: 
-						Script2();
+						script_fullscreen();
 						break;
 					//back to the start menu
 					case 2: 
@@ -57,7 +58,24 @@ if accept_key || mouse_left_pressed{
 						break;
 					}
 				break;
-		
+			//confirm exit
+			case 2:
+			switch(pos) {
+					//confirm exit text
+					case 0:
+	
+						break;	
+	
+					//yes
+					case 1: 
+						game_end();
+						break;
+					//back to the start menu
+					case 2: 
+						menu_level = 0;
+						break;
+			}
+			break;
 		}
 	
 	
