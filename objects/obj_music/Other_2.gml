@@ -1,4 +1,5 @@
 /// @description Insert description here
-audio_play_sound(music,1,0);
+//instance_deactivate_object(obj_music)
+audio_play_sound(music,1,true);
 
 

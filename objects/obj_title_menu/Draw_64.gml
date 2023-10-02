@@ -2,6 +2,12 @@
 //setting the menu font
 draw_set_font(fnt_menu);
 
+var aux;
+
+//getting mouse position
+var m_x = device_mouse_x_to_gui(0);
+var m_y = device_mouse_y_to_gui(0);
+
 // dynamically get wodth and height of menu
 var _new_w = 0;
 for (var i = 0; i < op_length; i++) 
@@ -25,9 +31,27 @@ draw_set_halign(fa_left);
 for (var i = 0; i < op_length; i++) 
 {
 	var _c = c_white;
+	var string_w = string_width(option[menu_level, i]);
+	var string_h = string_height(option[menu_level, i]);
+	var y2 =  y+op_border + op_space*i;
+	if (point_in_rectangle(m_x, m_y, string_w,  y2 - (string_h/2), x+op_border + string_w, y2 + string_h )) 
+	{
+		_c = c_yellow
+		draw_set_color(_c)
+		pos = i;
+	}else
+	{
+		var _c = c_white;
+		draw_set_color(_c)
+	}
+	
 	if pos == i {_c = c_yellow};
-	draw_text_color(x+op_border, y+op_border + op_space*i, option[menu_level, i], _c, _c, _c, _c, 1);
+	draw_text_color(x+op_border, y2, option[menu_level, i], _c, _c, _c, _c, 1);
 }
+	if (menu_level == 1 && pos == 0)
+		{
+			draw_text_color(x+op_border + 220, y2/1.4, global.currentVolume, _c, _c, _c, _c, 1)
+		}
 
 
 
